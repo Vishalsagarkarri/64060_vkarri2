@@ -1,0 +1,55 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+#source(https://www.kaggle.com/datasets/srinivas1/agricuture-crops-production-in-india?resource=download)
+Agriculture <- read.csv("C:/Users/jeeva/Downloads/archive/produce.csv")
+head(Agriculture)
+```
+
+```{r}
+
+install.packages("ggplot2", repos = "https://cran.rstudio.com")
+library(ggplot2)
+
+writeLines('PATH="$RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")
+
+
+```
+
+
+
+```{r}
+summary(Agriculture)
+```
+
+```{r}
+qualitative_variables<-c("Particulars", "Frequency","Unit")
+table(Agriculture[qualitative_variables])
+```
+
+```{r}
+log(Agriculture$X3.2005)
+```
+
+```{r}
+hist(Agriculture$X3.2005)
+```
+
+```{r}
+plot(Agriculture$X3.2005)
+```
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(Agriculture,aes(x=X3.2005,y=X3.2014))+
+  geom_point()
+
+```
+
+
+
+
